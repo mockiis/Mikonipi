@@ -4,7 +4,7 @@ var distance = 10.0;
 var xSpeed = 250.0;
 var ySpeed = 120.0;
 
-var yMinLimit = -20;
+var yMinLimit = -80;
 var yMaxLimit = 80;
 
 private var x = 0.0;
@@ -23,7 +23,8 @@ function Start () {
 }
 
 function LateUpdate () {
-    if (target &&  Input.GetTouch(0).phase == TouchPhase.Moved) {
+// || target &&  Input.GetTouch(0).phase == TouchPhase.Moved
+    if (target &&  Input.GetMouseButton(0)) {
         x += Input.GetAxis("Mouse X") * xSpeed * 0.02;
         y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02;
  		
