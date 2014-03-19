@@ -9,10 +9,10 @@ public class TouchButton : MonoBehaviour {
 	public bool _buttonEnabled; 
 	public void Start () {
 
-				//transform.localScale = Vector3.zero;
+		transform.localScale = Vector3.zero;
 		_gui = GetComponent<GUITexture> ();
 		_gui.pixelInset = new Rect (_gui.pixelInset.x, _gui.pixelInset.y,
-		_gui.texture.width, _gui.texture.height);
+						_gui.texture.width/2, _gui.texture.height/2);
 	}
 	public void Update () {
 		_buttonEnabled = false; // we reset the button.

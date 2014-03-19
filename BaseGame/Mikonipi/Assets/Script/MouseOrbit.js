@@ -20,10 +20,12 @@ function Start () {
 	// Make the rigid body not change rotation
    	if (rigidbody)
 		rigidbody.freezeRotation = true;
+//Input.GetTouch(0).phase == TouchPhase.Moved
+		//Input.GetMouseButton(0)||
 }
 
 function LateUpdate () {
-    if (target &&  Input.GetTouch(0).phase == TouchPhase.Moved) {
+    if (target &&Input.GetMouseButton(0)) {
         x += Input.GetAxis("Mouse X") * xSpeed * 0.02;
         y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02;
  		

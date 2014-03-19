@@ -12,7 +12,7 @@ public class ShowMeny : MonoBehaviour {
 		public bool showMenybool = false;
 
 
-		public int numberofmeny = 0;
+		int numberofmeny = 0;
 		GameObject Background;
 		GUITexture bgTexture;
 
@@ -37,6 +37,9 @@ public class ShowMeny : MonoBehaviour {
 		public Vector2 mousePosition;
 
 		public Texture backgroundTexture;
+
+		public Texture text_button;
+
 
 		public Texture text_Animal;
 
@@ -72,28 +75,29 @@ public class ShowMeny : MonoBehaviour {
 						bgTexture.texture = backgroundTexture;
 						bgTexture.transform.position = new Vector3 (0.5f, 0.5f, 0);
 						bgTexture.transform.localScale = new Vector3 (0.75f, 0.75f, 0);
+						bgTexture.color = new Vector4 (255, 255, 255, 0.25f);
 
 						Button1 = new GameObject ("Button1");
 						button1Texture = (GUITexture)Button1.AddComponent (typeof(GUITexture));
-						button1Texture.texture = backgroundTexture;
+						button1Texture.texture = text_button;
 						button1Texture.transform.position = new Vector3 (0.8f, 0.25f, 1);
 						button1Texture.transform.localScale = new Vector3 (0.1f, 0.1f, 0);
 						rect = new Rect (Button1.transform.position.x,Button1.transform.position.y,100,100);
-						button1Texture.color = Color.black;
+
 
 						AnimalPic = new GameObject ("AnimalPic");
 						gui_animal_texture = (GUITexture)AnimalPic.AddComponent (typeof(GUITexture));
 						gui_animal_texture.transform.position = new Vector3 (0.3f, 0.6f, 1);
 						gui_animal_texture.transform.localScale = new Vector3 (0.25f, 0.4f, 0);
-						gui_animal_texture.texture = backgroundTexture;
-						gui_animal_texture.color = Color.red;
+						gui_animal_texture.texture = text_Animal;
+
 
 						BuyButton = new GameObject ("BuyButton");
 						buyButtonTexture = (GUITexture)BuyButton.AddComponent (typeof (GUITexture));
 						buyButtonTexture.transform.position = new Vector3 (0.8f, 0.4f, 1);
 						buyButtonTexture.transform.localScale = new Vector3 (0.1f, 0.1f, 0);
-						buyButtonTexture.texture = backgroundTexture;
-						buyButtonTexture.color = Color.black;
+						buyButtonTexture.texture = text_button;
+
 
 						info = new GameObject ("info");
 						infotext = (GUIText)info.AddComponent (typeof(GUIText));

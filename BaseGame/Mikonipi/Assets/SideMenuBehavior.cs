@@ -19,7 +19,22 @@ public class SideMenuBehavior : MonoBehaviour {
 		GameObject level1;
 		GUITexture text_level1;
 
+		GameObject IceLand;
+		GUITexture text_I;
+
+		GameObject Desert;
+		GUITexture text_Des;
+
+		GameObject right_Button;
+		GUITexture text_right;
+
+		GameObject left_Button;
+		GUITexture text_left;
+
 		public Texture text;
+		public Texture text_forest;
+		public Texture text_IceLand;
+		public Texture text_desert;
 
 
 
@@ -27,6 +42,12 @@ public class SideMenuBehavior : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 				touchbutton = obj_tb.GetComponent<TouchButton> ();
+
+				right_Button = new GameObject ("rightButton");
+				text_right = (GUITexture)right_Button.AddComponent (typeof(GUITexture));
+				text_right.transform.position = new Vector3 (0, 0, 0);
+				text_right.transform.localScale = new Vector3 (0, 0, 0);
+				text_right.texture = text;
 	
 	}
 	
@@ -35,7 +56,16 @@ public class SideMenuBehavior : MonoBehaviour {
 				Movement ();
 				if (Input.GetMouseButtonDown (0)) {
 						if (level1 != null && text_level1.GetScreenRect ().Contains (Input.mousePosition)) {
-								Debug.Log ("Application.loadlevel(insertlevel)");
+								Debug.Log ("");
+								Application.LoadLevel("Forest");
+						}
+						if (IceLand != null && text_I.GetScreenRect ().Contains (Input.mousePosition)) {
+								Debug.Log ("");
+								Application.LoadLevel("IceLand");
+						}
+						if (Desert != null && text_Des.GetScreenRect ().Contains (Input.mousePosition)) {
+								Debug.Log ("");
+								Application.LoadLevel("Desert");
 						}
 				}
 					
@@ -54,6 +84,8 @@ public class SideMenuBehavior : MonoBehaviour {
 								gameObject.transform.position += transform.right * speed;
 								text_backGround.transform.position += transform.right * speed;
 								text_level1.transform.position += transform.right * speed;
+								text_I.transform.position += transform.right * speed;
+								text_Des.transform.position += transform.right * speed;
 								Debug.Log ("moveRight");
 
 								if (gameObject.transform.position.x >= 0.3f) {
@@ -68,6 +100,8 @@ public class SideMenuBehavior : MonoBehaviour {
 								gameObject.transform.position -= transform.right * speed;
 								text_backGround.transform.position -= transform.right * speed;
 								text_level1.transform.position -= transform.right * speed;
+								text_I.transform.position -= transform.right * speed;
+								text_Des.transform.position -= transform.right * speed;
 								Debug.Log ("MoveLeft");
 								if (gameObject.transform.position.x <= 0.07f) {
 										gameObject.transform.position = new Vector3 (0.07f,0.5f,0f);
@@ -87,15 +121,29 @@ public class SideMenuBehavior : MonoBehaviour {
 						text_backGround = (GUITexture)BackGround.AddComponent (typeof(GUITexture));
 						text_backGround.transform.position = new Vector3 (-0.20f, 0.95f, 0);
 						text_backGround.transform.localScale = new Vector3 (0.4f, 1.9f, 0f);
-						text_backGround.color = Color.black;
+						text_backGround.color = new Vector4 (255, 255, 255,0.2f);
 						text_backGround.texture = text;
 
 						level1 = new GameObject ("LevelButton1");
 						text_level1 = (GUITexture)level1.AddComponent (typeof(GUITexture));
 						text_level1.transform.position = new Vector3 (-0.12f, 0.95f, 1);
 						text_level1.transform.localScale = new Vector3 (0.1f, 0.1f, 0f);
-						text_level1.color = Color.magenta;
-						text_level1.texture = text;
+
+						text_level1.texture = text_forest;
+
+
+						IceLand = new GameObject ("Iceland");
+						text_I = (GUITexture)IceLand.AddComponent (typeof(GUITexture));
+						text_I.transform.position = new Vector3 (-0.12f, 0.75f, 1.0f);
+						text_I.transform.localScale = new Vector3 (0.1f, 0.1f, 0f);
+						text_I.texture = text_IceLand;
+
+						Desert = new GameObject ("Desert");
+						text_Des = (GUITexture)Desert.AddComponent (typeof(GUITexture));
+						text_Des.transform.position = new Vector3 (-0.12f, 0.55f, 1.0f);
+						text_Des.transform.localScale = new Vector3 (0.1f, 0.1f, 0f);
+						text_Des.texture = text_desert;
+
 						creatMenu++;
 				}
 		}
@@ -103,6 +151,7 @@ public class SideMenuBehavior : MonoBehaviour {
 		{
 				Destroy (BackGround);
 				Destroy (level1);
+				Destroy (IceLand);
 				creatMenu--;
 		}
 }
