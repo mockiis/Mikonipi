@@ -29,6 +29,7 @@ public class MouseManager : MonoBehaviour {
 
 		GameObject left_button;
 		GUITexture left_text;
+	
 
 		public Texture text;
 
@@ -90,7 +91,7 @@ public class MouseManager : MonoBehaviour {
 					break;
 								case"Desert":
 										Debug.Log("Desert");
-										land = "Clouds";
+										land = "EkoGrid";
 										text_land = text_Desert;
 										objectName = "";
 										numberofmeny++;
