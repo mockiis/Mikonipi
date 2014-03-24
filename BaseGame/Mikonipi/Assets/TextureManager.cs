@@ -30,7 +30,7 @@ public class TextureManager : MonoBehaviour {
 		Texture bumpMap = Resources.Load<Texture> ("scene select/pangea-1_NRM");
 
 		materials[0] = new Material (Shader.Find ("Transparent/Diffuse"));
-		materials [0].SetTexture("_MainTex", Resources.Load<Texture>("scene select/world-6-water"));
+		materials [0].SetTexture("_MainTex", Resources.Load<Texture>("scene select/ocean"));
 		//materials [0].color = Color.blue;
 
 		materials [1] = new Material (Shader.Find ("Transparent/Bumped Diffuse"));
@@ -46,11 +46,11 @@ public class TextureManager : MonoBehaviour {
 		materials [3].SetTexture ("_BumpMap", bumpMap);
 
 		materials [4] = new Material (Shader.Find ("Transparent/Bumped Diffuse"));
-		materials[4].SetTexture("_MainTex", Resources.Load<Texture>("scene select/desert"));
+		materials[4].SetTexture("_MainTex", Resources.Load<Texture>("scene select/dessert"));
 		materials [4].SetTexture ("_BumpMap", bumpMap);
 
 		materials [5] = new Material (Shader.Find ("Transparent/Bumped Diffuse"));
-		materials[5].SetTexture("_MainTex", Resources.Load<Texture>("scene select/savannah"));
+		materials[5].SetTexture("_MainTex", Resources.Load<Texture>("scene select/savane"));
 		materials [5].SetTexture ("_BumpMap", bumpMap);
 
 		//sista texturen, bumpmap
