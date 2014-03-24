@@ -27,29 +27,36 @@ public class TextureManager : MonoBehaviour {
 		 4 = öken
 		 5 = savan
 		 */
-		materials[0] = new Material (Shader.Find ("Diffuse"));
+		Texture bumpMap = Resources.Load<Texture> ("scene select/pangea-1_NRM");
+
+		materials[0] = new Material (Shader.Find ("Transparent/Diffuse"));
 		materials [0].SetTexture("_MainTex", Resources.Load<Texture>("scene select/world-6-water"));
 		//materials [0].color = Color.blue;
 
-		materials [1] = new Material (Shader.Find ("Transparent/Diffuse"));
+		materials [1] = new Material (Shader.Find ("Transparent/Bumped Diffuse"));
 		materials[1].SetTexture("_MainTex", Resources.Load<Texture>("scene select/snow"));
+		materials [1].SetTexture ("_BumpMap", bumpMap);
 
-		materials [2] = new Material (Shader.Find ("Transparent/Diffuse"));
+		materials [2] = new Material (Shader.Find ("Transparent/Bumped Diffuse"));
 		materials[2].SetTexture("_MainTex", Resources.Load<Texture>("scene select/forest"));
+		materials [2].SetTexture ("_BumpMap", bumpMap);
 
-		materials [3] = new Material (Shader.Find ("Transparent/Diffuse"));
+		materials [3] = new Material (Shader.Find ("Transparent/Bumped Diffuse"));
 		materials[3].SetTexture("_MainTex", Resources.Load<Texture>("scene select/rainforest"));
+		materials [3].SetTexture ("_BumpMap", bumpMap);
 
-		materials [4] = new Material (Shader.Find ("Transparent/Diffuse"));
+		materials [4] = new Material (Shader.Find ("Transparent/Bumped Diffuse"));
 		materials[4].SetTexture("_MainTex", Resources.Load<Texture>("scene select/desert"));
+		materials [4].SetTexture ("_BumpMap", bumpMap);
 
-		materials [5] = new Material (Shader.Find ("Transparent/Diffuse"));
+		materials [5] = new Material (Shader.Find ("Transparent/Bumped Diffuse"));
 		materials[5].SetTexture("_MainTex", Resources.Load<Texture>("scene select/savannah"));
+		materials [5].SetTexture ("_BumpMap", bumpMap);
 
 		//sista texturen, bumpmap
-		materials[size-1] = new Material(Shader.Find("Transparent/Bumped Diffuse"));
+		/*materials[size-1] = new Material(Shader.Find("Transparent/Bumped Diffuse"));
 		materials[size-1].SetTexture("_MainTex", Resources.Load<Texture>("scene select/transparent"));
-		materials [size-1].SetTexture ("_BumpMap", Resources.Load<Texture>("scene select/pangea-1_NRM"));
+		materials [size-1].SetTexture ("_BumpMap", Resources.Load<Texture>("scene select/pangea-1_NRM"));*/
 
 
 		renderer.materials = materials;  
