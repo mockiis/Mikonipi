@@ -25,7 +25,7 @@ public class MouseManager : MonoBehaviour {
 				{
 								case "Desert":
 										Debug.Log ("Desert clicked");
-										Application.LoadLevel ("TestGym");
+										Application.LoadLevel ("ScenGrund");
 					break;
 				case "Forest":
 					Debug.Log("Forest clicked");
