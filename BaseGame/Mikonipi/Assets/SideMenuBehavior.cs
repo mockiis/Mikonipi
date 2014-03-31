@@ -43,9 +43,11 @@ public class SideMenuBehavior : MonoBehaviour {
 	}
 		public void Movement()
 		{
-				if (touchbutton._buttonEnabled == true && menuactive==false) {
-						menumove++;
-						menuactive = true;
+				if (Input.GetMouseButtonDown (0)) {
+						if (gameObject.guiTexture.GetScreenRect().Contains(Input.mousePosition) && menuactive == false) {
+								menumove++;
+								menuactive = true;
+						}
 				}
 				if (menuactive == true) {
 						if (menumove % 2 != 0 && gameObject.transform.position.x <= 0.3f) {
