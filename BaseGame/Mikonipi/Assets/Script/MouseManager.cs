@@ -21,6 +21,7 @@ public class MouseManager : MonoBehaviour {
 			if (hit) 
 			{
 				string objectName = hitInfo.transform.gameObject.name;
+				Debug.Log(hitInfo.transform.name + " clicked!");
 				switch(objectName)
 				{
 								case "Desert":
