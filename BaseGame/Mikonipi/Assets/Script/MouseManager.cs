@@ -9,7 +9,7 @@ public class MouseManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		//Keffes Dick är fan Ball
 	}
 	
 	// Update is called once per frame
