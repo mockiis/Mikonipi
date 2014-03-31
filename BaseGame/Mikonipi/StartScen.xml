@@ -1,0 +1,32 @@
+﻿<StartScen>
+	<djur>
+		<name>ko0</name>
+		<time>0.4048174</time>
+		<rank>0.834152</rank>
+	</djur>
+	<djur>
+		<name>ko1</name>
+		<time>1.370161</time>
+		<rank>0.2699459</rank>
+	</djur>
+	<djur>
+		<name>ko2</name>
+		<time>1.386696</time>
+		<rank>0.8026066</rank>
+	</djur>
+	<djur>
+		<name>ko3</name>
+		<time>1.40329</time>
+		<rank>0.7743071</rank>
+	</djur>
+	<djur>
+		<name>ko4</name>
+		<time>1.41987</time>
+		<rank>0.7569244</rank>
+	</djur>
+	<djur>
+		<name>ko5</name>
+		<time>1.436567</time>
+		<rank>0.3485038</rank>
+	</djur>
+</StartScen>
