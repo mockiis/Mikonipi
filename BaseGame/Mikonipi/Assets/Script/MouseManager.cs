@@ -23,23 +23,23 @@ public class MouseManager : MonoBehaviour {
 				string objectName = hitInfo.transform.gameObject.name;
 				switch(objectName)
 				{
-								case "Desert":
+								case "desert":
 										Debug.Log ("Desert clicked");
 										Application.LoadLevel ("ScenGrund");
 					break;
-				case "Forest":
+				case "forest":
 					Debug.Log("Forest clicked");
 					break;
-				case"Ocean":
+				case"ocean":
 					Debug.Log("Ocean clicked");
 					break;
-				case"RainForest":
+				case"rainforest":
 						Debug.Log("Rain forest clicked");
 					break;
-				case"Savan":
+				case"savan":
 						Debug.Log("Savan clicked");
 					break;
-				case"Snow":
+				case"snow":
 						Debug.Log("Snow clicked");
 					break;
 				//add more case for every eco-system
