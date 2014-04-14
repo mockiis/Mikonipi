@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class ShowMeny : MonoBehaviour {
-//		public TouchButton touchButton;
-//		public Transform obj_touchbutton;
+		public TouchButton touchButton;
+		public Transform obj_touchbutton;
 
 		public SideMenuBehavior smb;
 		public Transform obj_smb;
@@ -40,24 +40,20 @@ public class ShowMeny : MonoBehaviour {
 
 		public Texture text_Animal;
 
-		public Texture text_button;
-
 		Rect rect;
 
 
 	void Start () {
-				//touchButton = obj_touchbutton.GetComponent<TouchButton> ();
+				touchButton = obj_touchbutton.GetComponent<TouchButton> ();
 				smb = obj_smb.GetComponent<SideMenuBehavior> ();
 				string_infotext = " Agge är fan king";
 				string_statstext = "tiotusentvåhundrafyra";
 	}
 	void Update () {
-				if (Input.GetMouseButtonDown (0)) {
-						if (gameObject.guiTexture.GetScreenRect ().Contains (Input.mousePosition)&& numberofmeny == 0) {
-								showMenybool = true;
-						}
-				}
+				if (touchButton._buttonEnabled == true && numberofmeny == 0) {
+						showMenybool = true;
 
+				}
 				if (showMenybool == true) {
 						makeMeny ();
 
@@ -76,30 +72,28 @@ public class ShowMeny : MonoBehaviour {
 						bgTexture.texture = backgroundTexture;
 						bgTexture.transform.position = new Vector3 (0.5f, 0.5f, 0);
 						bgTexture.transform.localScale = new Vector3 (0.75f, 0.75f, 0);
-						bgTexture.color = new Vector4 (255, 255, 255, 0.15f);
-						
 
 						Button1 = new GameObject ("Button1");
 						button1Texture = (GUITexture)Button1.AddComponent (typeof(GUITexture));
-						button1Texture.texture = text_button;
+						button1Texture.texture = backgroundTexture;
 						button1Texture.transform.position = new Vector3 (0.8f, 0.25f, 1);
 						button1Texture.transform.localScale = new Vector3 (0.1f, 0.1f, 0);
 						rect = new Rect (Button1.transform.position.x,Button1.transform.position.y,100,100);
-
+						button1Texture.color = Color.black;
 
 						AnimalPic = new GameObject ("AnimalPic");
 						gui_animal_texture = (GUITexture)AnimalPic.AddComponent (typeof(GUITexture));
 						gui_animal_texture.transform.position = new Vector3 (0.3f, 0.6f, 1);
 						gui_animal_texture.transform.localScale = new Vector3 (0.25f, 0.4f, 0);
-						gui_animal_texture.texture = text_Animal;
-
+						gui_animal_texture.texture = backgroundTexture;
+						gui_animal_texture.color = Color.red;
 
 						BuyButton = new GameObject ("BuyButton");
 						buyButtonTexture = (GUITexture)BuyButton.AddComponent (typeof (GUITexture));
 						buyButtonTexture.transform.position = new Vector3 (0.8f, 0.4f, 1);
 						buyButtonTexture.transform.localScale = new Vector3 (0.1f, 0.1f, 0);
-						buyButtonTexture.texture = text_button;
-					
+						buyButtonTexture.texture = backgroundTexture;
+						buyButtonTexture.color = Color.black;
 
 						info = new GameObject ("info");
 						infotext = (GUIText)info.AddComponent (typeof(GUIText));

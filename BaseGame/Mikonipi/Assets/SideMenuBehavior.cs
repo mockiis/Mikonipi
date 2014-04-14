@@ -43,11 +43,9 @@ public class SideMenuBehavior : MonoBehaviour {
 	}
 		public void Movement()
 		{
-				if (Input.GetMouseButtonDown (0)) {
-						if (gameObject.guiTexture.GetScreenRect().Contains(Input.mousePosition) && menuactive == false) {
-								menumove++;
-								menuactive = true;
-						}
+				if (touchbutton._buttonEnabled == true && menuactive==false) {
+						menumove++;
+						menuactive = true;
 				}
 				if (menuactive == true) {
 						if (menumove % 2 != 0 && gameObject.transform.position.x <= 0.3f) {
@@ -89,7 +87,7 @@ public class SideMenuBehavior : MonoBehaviour {
 						text_backGround = (GUITexture)BackGround.AddComponent (typeof(GUITexture));
 						text_backGround.transform.position = new Vector3 (-0.20f, 0.95f, 0);
 						text_backGround.transform.localScale = new Vector3 (0.4f, 1.9f, 0f);
-						text_backGround.color = new Vector4 (255, 255, 255, 0.025f);
+						text_backGround.color = Color.black;
 						text_backGround.texture = text;
 
 						level1 = new GameObject ("LevelButton1");

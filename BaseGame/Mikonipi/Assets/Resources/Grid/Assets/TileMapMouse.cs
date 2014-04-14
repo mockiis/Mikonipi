@@ -51,7 +51,7 @@ public class TileMapMouse : MonoBehaviour {
 			GameObject thingy;
 			thingy = (GameObject)Instantiate(placeCube, new Vector3(currentTileCoord.x + 1.0f, currentTileCoord.y + 0.5f, currentTileCoord.z + 0.5f), selectionCube.transform.rotation);
 			Debug.Log ("Done Clone");
-			position[(int)currentTileCoord.x,(int)currentTileCoord.z]=1;
+				position[(int)currentTileCoord.x,(int)currentTileCoord.z]=1;
 			}
 
 		}
